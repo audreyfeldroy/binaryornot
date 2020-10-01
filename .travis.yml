@@ -1,8 +1,9 @@
 # Config file for automatic testing at travis-ci.org
-
 sudo: false
 language: python
-
+arch: ppc64le
+      
+      
 matrix:
     include:
       - python: 2.7
@@ -15,9 +16,7 @@ matrix:
         env: TOX_ENV=py36
       - python: 3.7
         env: TOX_ENV=py37
-      - python: pypy
-        env: TOX_ENV=pypy
-
+        
 script: tox -e $TOX_ENV
 
 install:
